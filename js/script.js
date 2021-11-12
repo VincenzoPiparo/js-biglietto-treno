@@ -23,6 +23,9 @@ console.log (discount)
 let secondDiscount = ( ( price * kilToGo ) * 40 ) / 100; 
 console.log (secondDiscount)
 
+let finalDiscount = ( 0.21 * kilToGo )
+console.log (finalDiscount)
+
 // Calcolare il prezzo totale del viaggio in base a queste info:
 // primo passeggero minore 18 anni = sconto 20%:
 if ( ageUser < 18 ) {
