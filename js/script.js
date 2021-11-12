@@ -6,48 +6,33 @@
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
 
 
-
-
-
 // Chiedere l'età e il numero di chilometri da percorrere
 const ageUser = prompt ('Please enter your age here')
-console.log (ageUser)
+console.log(ageUser)
 
 const kilToGo = prompt ('how many kilometers do you have to travel')
-console.log (kilToGo)
+console.log(kilToGo)
 
 let price = 0.21;
-let discount = ( (price * kilToGo) * 20 ) / 100; 
-console.log (discount)
+const discount = ( (price * kilToGo) * 20 ) / 100; 
+console.log(discount)
 
-let secondDiscount = ( ( price * kilToGo ) * 40 ) / 100; 
-console.log (secondDiscount)
+const secondDiscount = ( ( price * kilToGo ) * 40 ) / 100; 
+console.log(secondDiscount)
 
-let finalDiscount = ( 0.21 * kilToGo )
-console.log (finalDiscount)
+const finalDiscount = ( 0.21 * kilToGo )
+console.log(finalDiscount)
 
 // Calcolare il prezzo totale del viaggio in base a queste info:
 // primo passeggero minore 18 anni = sconto 20%:
 if ( ageUser < 18 ) {
-    
+    price = finalDiscount - discount
+    console.log(price)
+} else if ( ageUser > 65 ) {
+    price = finalDiscount - secondDiscount
+    console.log(price)
+} else {
+    price = finalDiscount
 }
 
-// secondo passeggero età 24 anni km 150 / nessuno sconto = prezzo pieno
-// terzo passeggero età 68 anni km 100 / sconto del 40%
-
-
-
-
-// il prezzo del biglietto è definito in base ai km (0.21 € al km)
-
-
-
-// va applicato uno sconto del 20% per i minorenni
-
-
-
-// va applicato uno sconto del 40% per gli over 65.
-
-
-
-// L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
+alert (price)
